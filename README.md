@@ -17,38 +17,35 @@ It is implemented using **Maven**, with clear separation of concerns and modular
 - **Observer Pattern** → For notifying changes  
 - Additional patterns explained in `design_patterns/`  
 
-## Project Structure
-src/main/java/com/astronaut/
-├── app/ # Application entry point (CLI)
-├── core/ # Schedule management logic
-├── factory/ # Task creation logic (Factory pattern)
-├── model/ # Task model/entity
-├── observer/ # Notification system (Observer pattern)
-└── resources/ # Configurations (Log4j2)
+
+### Folder Explanations
+- **app/** → Contains `Main.java`, the console entry point that starts the scheduler.  
+- **core/** → Implements the core scheduling logic (`ScheduleManager`) including conflict detection and task management.  
+- **factory/** → Encapsulates task creation logic using the **Factory Pattern** (`TaskFactory`).  
+- **model/** → Defines data models, mainly the `Task` class representing scheduled items.  
+- **observer/** → Implements the **Observer Pattern** to notify observers (e.g., console) about task updates or conflicts.  
+- **resources/** → Holds external configuration files such as `log4j2.xml` for logging.  
 
 
 ## Build & Run
 ### 1. Compile and Package
 ```bash
 mvn clean package
+
 2. Run Application
-bash
+   java -jar target/astronaut-scheduler-1.0.0.jar
 
-java -jar target/astronaut-scheduler-1.0.0.jar
 3. Example Commands
-bash
 
-add "Morning Exercise" 07:00 07:30 HIGH
-view
-complete ID1
-remove ID1
-exit
+   add "Morning Exercise" 07:00 07:30 HIGH
+   view
+   complete ID1
+   remove ID1
+   exit
+
 Logging
-All actions are logged in logs/app.log using Log4j2.
+   All actions are logged in logs/app.log using Log4j2.
 
 Testing
-Run unit tests with:
-
-bash
-
-mvn test
+   Run unit tests with:
+      mvn test
