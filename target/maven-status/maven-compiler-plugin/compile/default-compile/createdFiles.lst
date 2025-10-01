@@ -1,7 +1,0 @@
-com\astronaut\factory\TaskFactory.class
-com\astronaut\observer\ConsoleNotifier.class
-com\astronaut\observer\TaskObserver.class
-com\astronaut\model\Task.class
-com\astronaut\core\ScheduleManager.class
-com\astronaut\app\Main.class
-com\astronaut\model\Task$Priority.class
